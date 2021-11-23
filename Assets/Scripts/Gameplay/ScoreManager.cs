@@ -31,6 +31,11 @@ public class ScoreManager : MonoBehaviour
         score = 0;
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
+
     public void IncrementScore(int pointsGained)
     {
         // update score

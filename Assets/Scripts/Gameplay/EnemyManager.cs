@@ -10,8 +10,6 @@ public class EnemyManager : MonoBehaviour
     private ARPlaneManager planeManager;
     [SerializeField]
     private ARSessionOrigin sessionOrigin;
-    [SerializeField]
-    private Camera arCamera;    // for billboarding 
 
     [Header("Spawn Parameters")]
     [SerializeField]
@@ -25,7 +23,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField]
     private GameObject[] trashPrefabs;
 
-    ///  TODO: take this out
+    [Header("Debug Text")]
     [SerializeField]
     private GameObject debugText;
 

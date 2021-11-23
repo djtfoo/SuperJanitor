@@ -21,7 +21,7 @@ public class ComboMeter : MonoBehaviour
     private float fillStartAmount = 1f;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // subscribe to scoreChanged event
         scoreManager.comboChanged += UpdateComboText;

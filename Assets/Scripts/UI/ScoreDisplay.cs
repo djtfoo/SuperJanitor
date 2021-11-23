@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -24,7 +23,7 @@ public class ScoreDisplay : MonoBehaviour
     private ScoreTier[] scoreTiers;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         // sort Score Tiers in ascending order as there is no guarantee that they are
         SortScoreTiers();
@@ -32,6 +31,9 @@ public class ScoreDisplay : MonoBehaviour
         // subscribe to scoreChanged event
         scoreManager.scoreChanged += UpdateScoreText;
         scoreManager.scoreChanged += UpdateScoreTier;
+
+        // load current score tier image
+        UpdateScoreTierImage(scoreManager.GetScore());
     }
 
     private void SortScoreTiers()
@@ -55,13 +57,21 @@ public class ScoreDisplay : MonoBehaviour
         // Get current score
         int score = args.score;
 
+        // Update score tier image
+        UpdateScoreTierImage(score);
+    }
+
+    private void UpdateScoreTierImage(int newScore)
+    {
         // Find current score tier
         int i;
         for (i = 0; i < scoreTiers.Length; ++i)
         {
-            if (score < scoreTiers[i].score)
+            if (newScore < scoreTiers[i].score)
                 break;
         }
+        // take the image for the previous score tier
+        i = Math.Max(0, i - 1);
 
         // Update score display background image
         scoreTierImage.sprite = scoreTiers[i].backgroundImageSprite;

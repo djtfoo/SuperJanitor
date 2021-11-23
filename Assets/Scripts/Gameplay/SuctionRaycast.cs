@@ -5,7 +5,7 @@ using UnityEngine;
 public class SuctionRaycast : MonoBehaviour
 {
     [SerializeField]
-    private ScoreManager scoreManager;
+    private GameManager gameManager;
     [SerializeField]
     private Camera arCamera;
 
@@ -51,7 +51,7 @@ public class SuctionRaycast : MonoBehaviour
             /// TODO: remove trash
 
             /// TODO: increment score
-            scoreManager.IncrementScore(100);
+            gameManager.PickedUpTrash();
         }
     }
 }
