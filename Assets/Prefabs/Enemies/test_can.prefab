@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 1491380513427754657}
   - component: {fileID: 4265288766344116261}
   - component: {fileID: 4516774608511425407}
+  - component: {fileID: 1036948328203855758}
   m_Layer: 6
   m_Name: test_can
   m_TagString: Trash
@@ -110,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 7906810991588307682}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children:
   - {fileID: 6792308552313274555}
   m_Father: {fileID: 0}
@@ -240,3 +241,18 @@ PolygonCollider2D:
       - {x: 0.21, y: -0.79999995}
       - {x: 0.26, y: -0.77}
       - {x: 0.85999995, y: -0.45999998}
+--- !u!114 &1036948328203855758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906810991588307682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2c2fda4f448ad4d9c6fd31cedca261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: can
+  score: 800
+  isGoldShadow: 0

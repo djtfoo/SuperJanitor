@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI trashCounterText;
 
-    private int numTrashPicked = 0;
+    private int numTrashPicked = 0; // total no. trash picked up
+    private Dictionary<string, int> trashQuantity;  // breakdown of quantities for each trash type
 
     // Start is called before the first frame update
     void Start()
@@ -43,14 +44,20 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Function to call when player has picked up trash successfully.
     /// </summary>
-    public void PickedUpTrash()
+    public void PickedUpTrash(Trash trash)
     {
         // increment no. trash picked up
         ++numTrashPicked;
         trashCounterText.text = numTrashPicked.ToString();
 
+        // update the trash collected breakdown
+        if (!trashQuantity.ContainsKey(trash.GetName())) {
+            trashQuantity.Add(trash.GetName(), 0);
+        }
+        trashQuantity[trash.GetName()] = trashQuantity[trash.GetName()] + 1;
+
         // increment game score
-        /// TODO: determine if x2 score or x1 score
-        scoreManager.IncrementScore(100);
+        /// TODO: determine if x2 score (gold shadow) or x1 score
+        scoreManager.IncrementScore(trash.GetScore());
     }
 }

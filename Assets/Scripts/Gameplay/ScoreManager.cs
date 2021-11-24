@@ -14,7 +14,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     private Timer comboTimer;
     [SerializeField]
-    private float comboTimerDuration = 5f;
+    private float comboTimerMaxDuration = 7f;
+    [SerializeField]
+    private float comboTimerMinDuration = 4f;
     [SerializeField]
     private float comboTimerDurationPerMultiplier = -0.1f;
 
@@ -57,11 +59,11 @@ public class ScoreManager : MonoBehaviour
         // Set timer
         if (newMultiplier == 1) // combo is reset
             // Disable timer
-            comboTimer.SetTimerDuration(comboTimerDuration, false);
+            comboTimer.SetTimerDuration(comboTimerMaxDuration, false);
         else
         {
             // calculate new combo timer
-            float newTimer = Math.Max(1f, comboTimerDuration + (comboMultiplier - 1) * comboTimerDurationPerMultiplier);
+            float newTimer = Math.Max(comboTimerMinDuration, comboTimerMaxDuration + (comboMultiplier - 1) * comboTimerDurationPerMultiplier);
             comboTimer.SetTimerDuration(newTimer, true);
         }
         // trigger combo updated event

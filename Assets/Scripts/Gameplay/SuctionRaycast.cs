@@ -13,6 +13,9 @@ public class SuctionRaycast : MonoBehaviour
     private float cursorX;
     private float cursorY;
 
+    private float screenWidth = 1440;
+    private float screenHeight = 2960;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +33,7 @@ public class SuctionRaycast : MonoBehaviour
     public void TrySucking()
     {
         // get screen position of cursor
-        Vector2 screenPosition = arCamera.ViewportToScreenPoint(new Vector2(cursorX, cursorY));
+        //Vector2 screenPosition = arCamera.ViewportToScreenPoint(new Vector2(cursorX, cursorY));
 
         /*
         /// TODO: raycast and see hits with trash
@@ -45,13 +48,15 @@ public class SuctionRaycast : MonoBehaviour
             scoreManager.IncrementScore(100);
         }*/
 
-        Ray ray = arCamera.ScreenPointToRay(screenPosition);
-        if (Physics.Raycast(ray, 100))
+        Ray ray = arCamera.ScreenPointToRay(new Vector2(cursorX * screenWidth, cursorY * screenHeight));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            /// TODO: remove trash
+            /// TODO: update trash picked data and increment score
+            gameManager.PickedUpTrash(hit.transform.GetComponent<Trash>());
 
-            /// TODO: increment score
-            gameManager.PickedUpTrash();
+            /// TODO: remove trash
+            Destroy(hit.transform.gameObject);
         }
     }
 }
