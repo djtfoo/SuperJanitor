@@ -7,6 +7,8 @@ public class SuctionRaycast : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
     [SerializeField]
+    private ScoreManager scoreManager;
+    [SerializeField]
     private Camera arCamera;
 
     // normalised position of cursor on screen
@@ -32,6 +34,8 @@ public class SuctionRaycast : MonoBehaviour
 
     public void TrySucking()
     {
+        scoreManager.IncrementScore(100);
+
         // get screen position of cursor
         //Vector2 screenPosition = arCamera.ViewportToScreenPoint(new Vector2(cursorX, cursorY));
 

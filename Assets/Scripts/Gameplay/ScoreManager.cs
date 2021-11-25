@@ -9,26 +9,26 @@ public struct ScoreChangedEventArgs
 public class ScoreManager : MonoBehaviour
 {
     private int score = 0;
-    private int comboMultiplier = 1;
+    private int killStreak = 0;
 
     [SerializeField]
-    private Timer comboTimer;
+    private Timer killStreakTimer;
     [SerializeField]
-    private float comboTimerMaxDuration = 7f;
+    private float killStreakTimerMaxDuration = 7f;
     [SerializeField]
-    private float comboTimerMinDuration = 4f;
+    private float killStreakTimerMinDuration = 4f;
     [SerializeField]
-    private float comboTimerDurationPerMultiplier = -0.1f;
+    private float killStreakTimerDurationPerKill = -0.1f;
 
     // delegate for callback when time is up
     public event Action<ScoreChangedEventArgs> scoreChanged;
-    public event Action<int> comboChanged;
+    public event Action<int> killStreakChanged;
 
     // Start is called before the first frame update
     void Start()
     {
         // Set combo to default (timer for meter will be disabled)
-        SetComboMultiplier(1);
+        SetKillStreak(0);
         // Set score to default
         score = 0;
     }
@@ -41,10 +41,13 @@ public class ScoreManager : MonoBehaviour
     public void IncrementScore(int pointsGained)
     {
         // update score
-        score += pointsGained * comboMultiplier;
+        float multiplier = 1f +         // base multiplier is 1x
+            Mathf.Min(2f, (float)killStreak * 0.1f) +   // increase multiplier by 0.1x for every kill (caps at 20)
+            ((int)Mathf.Max(0f, killStreak-20) / 5) * 0.5f;     // after 20 kills, every 5 kills will increase multiplier by 0.5x
+        score += (int)Mathf.Round(pointsGained * multiplier);
 
         // update combo multiplier and timer
-        SetComboMultiplier(comboMultiplier + 1);   /// TODO: +=1 or *=2?
+        SetKillStreak(killStreak + 1);
 
         // trigger score updated event
         ScoreChangedEventArgs args;
@@ -52,26 +55,26 @@ public class ScoreManager : MonoBehaviour
         scoreChanged.Invoke(args);
     }
 
-    private void SetComboMultiplier(int newMultiplier)
+    private void SetKillStreak(int newStreak)
     {
         // Set multiplier amount
-        comboMultiplier = newMultiplier;
+        killStreak = newStreak;
         // Set timer
-        if (newMultiplier == 1) // combo is reset
+        if (newStreak == 0) // combo is reset
             // Disable timer
-            comboTimer.SetTimerDuration(comboTimerMaxDuration, false);
+            killStreakTimer.StopTimer();
         else
         {
             // calculate new combo timer
-            float newTimer = Math.Max(comboTimerMinDuration, comboTimerMaxDuration + (comboMultiplier - 1) * comboTimerDurationPerMultiplier);
-            comboTimer.SetTimerDuration(newTimer, true);
+            float newTimer = Math.Max(killStreakTimerMinDuration, killStreakTimerMaxDuration + (killStreak - 1) * killStreakTimerDurationPerKill);
+            killStreakTimer.SetTimerDuration(newTimer, true);
         }
         // trigger combo updated event
-        comboChanged.Invoke(comboMultiplier);
+        killStreakChanged.Invoke(killStreak);
     }
 
-    public void ResetComboMultiplier()
+    public void ResetKillStreak()
     {
-        SetComboMultiplier(1);
+        SetKillStreak(0);
     }
 }

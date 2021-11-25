@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+// Kill streak meter display
 public class ComboMeter : MonoBehaviour
 {
     [SerializeField]
@@ -17,6 +18,8 @@ public class ComboMeter : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI comboText;
     [SerializeField]
+    private TextMeshProUGUI comboXLabel;
+    [SerializeField]
     [Tooltip("Image fill amount that will change over time")]
     private float fillStartAmount = 1f;
 
@@ -24,7 +27,7 @@ public class ComboMeter : MonoBehaviour
     void Awake()
     {
         // subscribe to scoreChanged event
-        scoreManager.comboChanged += UpdateComboText;
+        scoreManager.killStreakChanged += UpdateComboText;
     }
 
     // Update is called once per frame
@@ -36,6 +39,15 @@ public class ComboMeter : MonoBehaviour
 
     private void UpdateComboText(int args)
     {
-        comboText.text = args.ToString() + "x";
+        if (args == 0)
+        {
+            comboText.text = "";
+            comboXLabel.gameObject.SetActive(false);
+        }
+        else
+        {
+            comboText.text = args.ToString();
+            comboXLabel.gameObject.SetActive(true);
+        }
     }
 }

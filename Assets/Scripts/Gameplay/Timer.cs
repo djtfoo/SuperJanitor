@@ -20,9 +20,15 @@ public class Timer : MonoBehaviour
     private UnityEvent onTimerUp;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         timeRemaining = timerDuration;
+    }
+
+    void Start()
+    {
+        if (autoStart)
+            StartTimer();
     }
 
     // Update is called once per frame
@@ -52,10 +58,19 @@ public class Timer : MonoBehaviour
     }
 
     /// <summary>
-    /// Stop the timer.
+    /// Stop the timer from running and keep its previous time.
+    /// </summary>
+    public void PauseTimer()
+    {
+        timerRunning = false;
+    }
+
+    /// <summary>
+    /// Stop the timer and set the time to 0.
     /// </summary>
     public void StopTimer()
     {
+        timeRemaining = 0f;
         timerRunning = false;
     }
     
