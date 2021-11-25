@@ -9,7 +9,11 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
+    private EnemyManager enemyManager;
+    [SerializeField]
     private ScoreManager scoreManager;
+    [SerializeField]
+    private EndGameScreen endGameScreen;
 
     [Header("UI Elements")]
     [SerializeField]
@@ -17,17 +21,42 @@ public class GameManager : MonoBehaviour
     [Header("To enable only when game starts")]
     [SerializeField]
     private GameObject[] gameplayUI;
+    [SerializeField]
+    private int bossDefeatedPoints = 5000;
 
     [SerializeField]
     private Timer gameTimer;
 
+    private static GameManager instance;
+    public static GameManager Instance
+    {
+        get { return instance; }
+    }
+
     ///  TODO: tbh, this shld be in ScoreManager instead
     private int numTrashPicked = 0; // total no. trash picked up
+    private bool isBossDefeated = false;
+    public bool IsBossDefeated
+    {
+        get { return isBossDefeated; }
+    }
     private Dictionary<string, int> trashQuantity;  // breakdown of quantities for each trash type
 
     // Start is called before the first frame update
     void Awake()
     {
+        // init singleton instance
+        if (instance != null)
+        {
+            Debug.Log("Instance of GameManager already exists. Destroying this instance...");
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+
+        // init Dictionary
         trashQuantity = new Dictionary<string, int>();
     }
 
@@ -67,7 +96,6 @@ public class GameManager : MonoBehaviour
     public void PickedUpTrash(Trash trash)
     {
         // increment game score
-        /// TODO: determine if x2 score (gold shadow) or x1 score
         scoreManager.IncrementScore(trash.GetScore());
 
         // increment no. trash picked up
@@ -79,6 +107,12 @@ public class GameManager : MonoBehaviour
             trashQuantity.Add(trash.GetName(), 0);
         }
         trashQuantity[trash.GetName()] = trashQuantity[trash.GetName()] + 1;
+
+        // trigger check for all trash picked up
+        enemyManager.TrashIsRemoved(trash);
+
+        // remove trash
+        Destroy(trash.gameObject);
     }
 
     public int GetTrashQuantity(string name)
@@ -87,5 +121,24 @@ public class GameManager : MonoBehaviour
             return 0;
         else
             return trashQuantity[name];
+    }
+
+    /// <summary>
+    /// Function to call to end the game.
+    /// </summary>
+    public void EndGame()
+    {
+        // Enable endgame screen
+        endGameScreen.DisplayEndgameScreen();
+    }
+
+    public void WinGame()
+    {
+        // The only possible win condition is that the boss is defeated
+        isBossDefeated = true;
+        // Increment score
+        scoreManager.IncrementScore(bossDefeatedPoints);
+        // end the game
+        EndGame();
     }
 }

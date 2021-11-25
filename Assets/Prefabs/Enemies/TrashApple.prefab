@@ -146,7 +146,9 @@ MonoBehaviour:
   name: apple
   score: 400
   trashSprite: {fileID: 7385735987108403438}
-  isGoldShadow: 0
+  shadowSprite: {fileID: 8404633786106092329}
+  isBonus: 0
+  bonusShadowSprite: {fileID: 21300000, guid: 626097a8bd953274fa2f09898a2d4fa5, type: 3}
 --- !u!61 &1319786839910053230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,7 +186,7 @@ GameObject:
   - component: {fileID: 8404633786106092328}
   - component: {fileID: 8404633786106092329}
   m_Layer: 0
-  m_Name: f
+  m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

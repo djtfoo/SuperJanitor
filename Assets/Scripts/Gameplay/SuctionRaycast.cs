@@ -32,25 +32,29 @@ public class SuctionRaycast : MonoBehaviour
 
     public void TrySucking()
     {
+        // 2D raycast from center of screen
         Vector2 screenPosition = arCamera.ViewportToScreenPoint(new Vector2(cursorX, cursorY));
         Ray ray = arCamera.ScreenPointToRay(screenPosition);
         RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+
+        // Check if raycast hit a collider
         if (hit2D.collider != null)
         {
-            // Display debug text
+            // TEMP: Display debug text
             debugText.gameObject.SetActive(true);
             debugText.text = "RAYCAST!!!!";
 
-            /// TODO: update trash picked data and increment score
+            // Get the Trash item hit by the raycast
             Trash trash = hit2D.transform.GetComponent<Trash>();
             if (trash != null)
+            {
+                // update trash picked data and increment score
                 gameManager.PickedUpTrash(trash);
-
-            /// TODO: remove trash
-            Destroy(hit2D.transform.gameObject);
+            }
         }
         else
         {
+            // TEMP: Display debug text
             debugText.gameObject.SetActive(true);
             debugText.text = "NO RAYCAST :(";
         }

@@ -14,7 +14,7 @@ public class EnemyManager : MonoBehaviour
 
     [Header("Spawn Parameters")]
     [SerializeField]
-    private int numSpawns = 5;
+    private int numSpawnsPerWave = 5;
     [SerializeField]
     private float floorSizeX;
     [SerializeField]
@@ -30,6 +30,13 @@ public class EnemyManager : MonoBehaviour
 
     private Transform worldRootTransform;
     private bool gameWorldSpawned = false;
+
+    private List<Transform> trashList;
+
+    void Awake()
+    {
+        List<Transform> trashList = new List<Transform>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -93,33 +100,69 @@ public class EnemyManager : MonoBehaviour
         GameObject worldRoot = Instantiate(worldRootPrefab);
         worldRootTransform = worldRoot.transform;
 
-        // (enemy's throwing animation should start by default!!)
+        // Trigger enemy's throwing animation
+        worldRootTransform.GetComponent<GameWorld>().BossEnemy.PlayThrowAnim();
 
         // spawn the gameplay area
         sessionOrigin.MakeContentAppearAt(worldRootTransform, plane.center);
     }
 
-    public List<Transform> SpawnTrash()
+    /// <summary>
+    /// Spawn a wave of trash and returns the List of Trash.
+    /// (Allows the trash to be moved along its thrown trajectory)
+    /// </summary>
+    /// <returns>List of spawned Trash</returns>
+    public List<Transform> SpawnTrashWave()
     {
-        List<Transform> trashList = new List<Transform>();
         // spawn some trash
-        for (int i = 0; i < numSpawns; ++i)
+        for (int i = 0; i < numSpawnsPerWave; ++i)
         {
-            // randomly spawn a trash object
-            int randIdx = Random.Range(0, trashPrefabs.Length);
-            GameObject newTrash = Instantiate(trashPrefabs[randIdx]);
-            // add as child of the root object
-            newTrash.transform.SetParent(worldRootTransform);
-            // randomly set relative position of trash object
-            float randomX = Random.Range(-0.4f * floorSizeX, 0.4f * floorSizeX);    // trash will be within 80% of the play area
-            float randomZ = Random.Range(-0.4f * floorSizeZ, 0.4f * floorSizeZ);    // trash will be within 80% of the play area
-            newTrash.transform.localPosition = new Vector3(randomX, 0f, randomZ);
-
             // add to trash list
-            trashList.Add(newTrash.transform);
+            trashList.Add(SpawnTrash());
         }
 
         // return trash list to be worked on
         return trashList;
     }
+
+    public Transform SpawnTrash()
+    {
+        // randomly spawn a trash object
+        int randIdx = Random.Range(0, trashPrefabs.Length);
+        GameObject newTrash = Instantiate(trashPrefabs[randIdx]);
+        // add as child of the root object
+        newTrash.transform.SetParent(worldRootTransform);
+        // randomly set relative position of trash object
+        newTrash.transform.localPosition = GetRandomLocalPosition();
+
+        return newTrash.transform;
+    }
+
+    public void TrashIsRemoved(Trash trash)
+    {
+        // Remove Trash from List
+        trashList.Remove(trash.transform);
+
+        // If all Trash is removed, make boss vulnerable
+        if (trashList.Count == 0)
+        {
+            worldRootTransform.GetComponent<GameWorld>().BossEnemy.SetVulnerableToHits();
+        }
+    }
+
+    private Vector3 GetRandomLocalPosition()
+    {
+        // randomly set relative position of trash object
+        float randomX = Random.Range(-0.4f * floorSizeX, 0.4f * floorSizeX);    // trash will be within 80% of the play area
+        float randomZ = Random.Range(-0.4f * floorSizeZ, 0.4f * floorSizeZ);    // trash will be within 80% of the play area
+
+        return new Vector3(randomX, 0f, randomZ);
+    }
+
+    /* For boss to move to random position in world, but not in use anymore
+    public Vector3 GetRandomPosition()
+    {
+        Vector3 randomLocalPos = GetRandomLocalPosition();
+        return worldRootTransform.position + randomLocalPos;
+    }*/
 }

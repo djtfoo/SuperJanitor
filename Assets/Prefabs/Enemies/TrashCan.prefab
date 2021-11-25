@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6792308552313274555}
   - component: {fileID: 6792308552313274554}
   m_Layer: 0
-  m_Name: f (2)
+  m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +255,9 @@ MonoBehaviour:
   name: can
   score: 800
   trashSprite: {fileID: 6636917875692628066}
-  isGoldShadow: 0
+  shadowSprite: {fileID: 6792308552313274554}
+  isBonus: 0
+  bonusShadowSprite: {fileID: 21300000, guid: 626097a8bd953274fa2f09898a2d4fa5, type: 3}
 --- !u!61 &4782735902150105564
 BoxCollider2D:
   m_ObjectHideFlags: 0
