@@ -130,9 +130,9 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_2_attack_0
       rect:
         serializedVersion: 2
-        x: 40
+        x: 0
         y: 0
-        width: 728
+        width: 768
         height: 1777
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,9 +151,9 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_2_attack_1
       rect:
         serializedVersion: 2
-        x: 800
+        x: 768
         y: 0
-        width: 741
+        width: 768
         height: 1777
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,9 +172,9 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_2_attack_2
       rect:
         serializedVersion: 2
-        x: 1544
+        x: 1536
         y: 0
-        width: 760
+        width: 768
         height: 1777
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -193,9 +193,9 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_2_attack_3
       rect:
         serializedVersion: 2
-        x: 2311
+        x: 2304
         y: 0
-        width: 761
+        width: 768
         height: 1777
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -217,7 +217,7 @@ TextureImporter:
         x: 3072
         y: 0
         width: 768
-        height: 1770
+        height: 1777
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,9 +235,9 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_2_attack_5
       rect:
         serializedVersion: 2
-        x: 3847
+        x: 3840
         y: 0
-        width: 761
+        width: 768
         height: 1777
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -256,9 +256,9 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_2_attack_6
       rect:
         serializedVersion: 2
-        x: 4635
+        x: 4608
         y: 0
-        width: 741
+        width: 768
         height: 1777
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -277,9 +277,9 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_2_attack_7
       rect:
         serializedVersion: 2
-        x: 5403
+        x: 5376
         y: 0
-        width: 741
+        width: 768
         height: 1777
       alignment: 0
       pivot: {x: 0, y: 0}

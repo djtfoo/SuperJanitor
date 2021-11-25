@@ -484,10 +484,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cd94deca9186644b014b00d03fb67f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyManager: {fileID: 1581817082}
   scoreManager: {fileID: 314618157}
   trashCounterText: {fileID: 1802643427}
-  gameTimer: {fileID: 0}
+  gameplayUI:
+  - {fileID: 1093454193}
+  - {fileID: 230072068}
+  - {fileID: 645661189}
+  - {fileID: 1991807000}
+  - {fileID: 992563100}
+  gameTimer: {fileID: 314618160}
 --- !u!114 &314618160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,9 +691,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 314618159}
-        m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 1581817082}
+        m_TargetAssemblyTypeName: EnemyManager, Assembly-CSharp
+        m_MethodName: SpawnGameWorld
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

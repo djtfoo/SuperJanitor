@@ -9,13 +9,14 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    private EnemyManager enemyManager;
-    [SerializeField]
     private ScoreManager scoreManager;
 
     [Header("UI Elements")]
     [SerializeField]
     private TextMeshProUGUI trashCounterText;
+    [Header("To enable only when game starts")]
+    [SerializeField]
+    private GameObject[] gameplayUI;
 
     [SerializeField]
     private Timer gameTimer;
@@ -30,6 +31,15 @@ public class GameManager : MonoBehaviour
         trashQuantity = new Dictionary<string, int>();
     }
 
+    void Start()
+    {
+        // Disable gameplay UI
+        for (int i = 0; i < gameplayUI.Length; ++i)
+        {
+            gameplayUI[i].SetActive(false);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -41,11 +51,14 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        // Find the floor plane and spawn trash
-        enemyManager.SpawnTrash();
-
         // Start timer
         gameTimer.StartTimer();
+
+        // Enable gameplay UI
+        for (int i = 0; i < gameplayUI.Length; ++i)
+        {
+            gameplayUI[i].SetActive(true);
+        }
     }
 
     /// <summary>

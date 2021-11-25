@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using TMPro;
@@ -28,7 +29,7 @@ public class EnemyManager : MonoBehaviour
     private GameObject debugText;
 
     private Transform worldRootTransform;
-    private bool trashHasSpawned = false;   // initial wave of trash when game starts
+    private bool gameWorldSpawned = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,7 @@ public class EnemyManager : MonoBehaviour
 
     private void DisablePlaneRendering(ARPlanesChangedEventArgs args)
     {
-        if (trashHasSpawned)
+        if (gameWorldSpawned)
         {
             foreach (ARPlane plane in args.added)
             {
@@ -53,7 +54,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void SpawnTrash()
+    public void SpawnGameWorld()
     {
         ARPlane floorPlane = null;
         // find the largest plane, assume it's the floor (PlaneClassification.Floor does not work)
@@ -70,7 +71,8 @@ public class EnemyManager : MonoBehaviour
 
         if (floorPlane != null) // there is at least 1 ARPlane detected
         {
-            SpawnTrash(floorPlane);
+            SpawnGameWorld(floorPlane);
+            gameWorldSpawned = true;
         }
         else
         {
@@ -85,13 +87,21 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    private void SpawnTrash(ARPlane plane)
+    private void SpawnGameWorld(ARPlane plane)
     {
-
         // instantiate root of the gameplay area
         GameObject worldRoot = Instantiate(worldRootPrefab);
         worldRootTransform = worldRoot.transform;
 
+        // (enemy's throwing animation should start by default!!)
+
+        // spawn the gameplay area
+        sessionOrigin.MakeContentAppearAt(worldRootTransform, plane.center);
+    }
+
+    public List<Transform> SpawnTrash()
+    {
+        List<Transform> trashList = new List<Transform>();
         // spawn some trash
         for (int i = 0; i < numSpawns; ++i)
         {
@@ -104,14 +114,12 @@ public class EnemyManager : MonoBehaviour
             float randomX = Random.Range(-0.4f * floorSizeX, 0.4f * floorSizeX);    // trash will be within 80% of the play area
             float randomZ = Random.Range(-0.4f * floorSizeZ, 0.4f * floorSizeZ);    // trash will be within 80% of the play area
             newTrash.transform.localPosition = new Vector3(randomX, 0f, randomZ);
+
+            // add to trash list
+            trashList.Add(newTrash.transform);
         }
 
-        // spawn the gameplay area
-        sessionOrigin.MakeContentAppearAt(worldRootTransform, plane.center);
-        trashHasSpawned = true;
-
-        // Debug text for looking at stuff
-        //debugText.SetActive(true);
-        //debugText.GetComponent<TextMeshProUGUI>().text = plane.center.x + "," + plane.center.y + " || " + plane.size.x + ", " + plane.size.y;
+        // return trash list to be worked on
+        return trashList;
     }
 }

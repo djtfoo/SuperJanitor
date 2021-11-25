@@ -19,19 +19,19 @@ TextureImporter:
     second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_4
   - first:
       213: -1578699995195634081
-    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_5
+    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_6
   - first:
       213: 1220716806020766648
-    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_5
+    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_6
   - first:
       213: 7353137862859254838
-    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_5
+    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_6
   - first:
       213: 4546223596371074289
-    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_5
+    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_6
   - first:
       213: 7243866638322813725
-    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_5
+    second: phone screen_gameplay_spritesheet_enemyanimations_1_idle_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,12 +136,12 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 0
         y: 0
-        width: 728
-        height: 1777
+        width: 738
+        height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,12 +157,12 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_1
       rect:
         serializedVersion: 2
-        x: 743
+        x: 738
         y: 0
-        width: 729
-        height: 1794
+        width: 738
+        height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_2
       rect:
         serializedVersion: 2
-        x: 1481
+        x: 1476
         y: 0
-        width: 729
-        height: 1808
+        width: 738
+        height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,12 +199,12 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_3
       rect:
         serializedVersion: 2
-        x: 2216
+        x: 2214
         y: 0
-        width: 734
-        height: 1822
+        width: 738
+        height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,12 +220,12 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_4
       rect:
         serializedVersion: 2
-        x: 2950
+        x: 2952
         y: 0
-        width: 740
+        width: 738
         height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,15 +238,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_6
+      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_5
       rect:
         serializedVersion: 2
-        x: 4430
+        x: 3690
         y: 0
-        width: 735
-        height: 1822
+        width: 738
+        height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,15 +259,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_7
+      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_6
       rect:
         serializedVersion: 2
-        x: 5171
+        x: 4428
         y: 0
-        width: 729
-        height: 1808
+        width: 738
+        height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,15 +280,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_8
+      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_7
       rect:
         serializedVersion: 2
-        x: 5909
+        x: 5166
         y: 0
-        width: 729
-        height: 1794
+        width: 738
+        height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,15 +301,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_9
+      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_8
       rect:
         serializedVersion: 2
-        x: 6647
+        x: 5904
         y: 0
-        width: 729
-        height: 1777
+        width: 738
+        height: 1833
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,12 +322,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_5
+      name: phone screen_gameplay_spritesheet_enemyanimations_1_idle_9
       rect:
         serializedVersion: 2
-        x: 3691
+        x: 6642
         y: 0
-        width: 741
+        width: 738
         height: 1833
       alignment: 0
       pivot: {x: 0, y: 0}

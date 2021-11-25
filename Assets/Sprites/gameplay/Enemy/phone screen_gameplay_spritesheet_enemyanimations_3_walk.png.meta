@@ -133,9 +133,9 @@ TextureImporter:
       name: phone screen_gameplay_spritesheet_enemyanimations_3_walk_1
       rect:
         serializedVersion: 2
-        x: 1324
+        x: 1248
         y: 0
-        width: 1172
+        width: 1248
         height: 857
       alignment: 0
       pivot: {x: 0, y: 0}

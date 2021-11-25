@@ -11,6 +11,9 @@ public class Trash : MonoBehaviour
     [Tooltip("Score that this trash gives when picked up")]
     private int score;
     [SerializeField]
+    [Tooltip("Trash sprite")]
+    private SpriteRenderer trashSprite;
+    [SerializeField]
     [Tooltip("Legendary trash dropped by enemy")]
     private bool isGoldShadow;
 
@@ -33,5 +36,10 @@ public class Trash : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+
+    public Transform GetSpriteTransform()
+    {
+        return trashSprite.transform;
     }
 }

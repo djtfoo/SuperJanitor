@@ -15,15 +15,13 @@ public class SuctionRaycast : MonoBehaviour
     private TextMeshProUGUI debugText;
 
     // normalised position of cursor on screen
-    private float cursorX;
-    private float cursorY;
+    private float cursorX = 0.5f;
+    private float cursorY = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
-        /// TODO: calculate normalised position of cursor
-        cursorX = 0.5f;
-        cursorY = 0.5f;
+
     }
 
     // Update is called once per frame
