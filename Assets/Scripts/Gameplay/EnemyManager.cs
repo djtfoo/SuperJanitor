@@ -37,17 +37,9 @@ public class EnemyManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        if (trashHasSpawned)
-        {
-            // continuously update orientation of trash items
-            foreach (Transform child in worldRootTransform)
-            {
-                //child.LookAt(arCamera.transform);
-                sessionOrigin.MakeContentAppearAt(child, child.rotation);
-            }
-        }
+
     }
 
     private void DisablePlaneRendering(ARPlanesChangedEventArgs args)

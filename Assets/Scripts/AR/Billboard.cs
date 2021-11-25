@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 namespace HoloToolkit.Unity
 {
@@ -49,14 +50,20 @@ namespace HoloToolkit.Unity
             set { targetTransform = value; }
         }
 
-        // Get reference to the AR camera
+        // Get reference to the AR scripts
         private Camera arCamera = null;
+        private ARSessionOrigin arSessionOrigin = null;
 
         void Start()
         {
+            // Find AR Camera
             GameObject cameraObj = GameObject.Find("AR Camera");
             if (cameraObj != null)
                 arCamera = cameraObj.GetComponent<Camera>();
+            // Find AR Session Origin
+            GameObject arSessionOriginObj = GameObject.Find("AR Session Origin");
+            if (arSessionOriginObj != null)
+                arSessionOrigin = arSessionOriginObj.GetComponent<ARSessionOrigin>();
             OnEnable();
         }
 
@@ -144,6 +151,15 @@ namespace HoloToolkit.Unity
             {
                 transform.rotation = Quaternion.LookRotation(-directionToTarget);
             }
+
+            // Update the object's rotation in the AR Session
+            UpdateARSession();
+        }
+
+        // Update is called once per frame
+        private void UpdateARSession()
+        {
+            arSessionOrigin.MakeContentAppearAt(transform, transform.rotation);
         }
     }
 }

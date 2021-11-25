@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2014054459397100563}
   - component: {fileID: 8509399362807468373}
   - component: {fileID: 1121869672269186314}
-  - component: {fileID: 2916274492187622393}
   - component: {fileID: -5875140193906012394}
+  - component: {fileID: 2141528342213205434}
   m_Layer: 6
   m_Name: test_apple
   m_TagString: Trash
@@ -100,7 +100,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivotAxis: 4
   targetTransform: {fileID: 0}
---- !u!60 &2916274492187622393
+--- !u!114 &-5875140193906012394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750868850706131407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2c2fda4f448ad4d9c6fd31cedca261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: apple
+  score: 400
+  isGoldShadow: 0
+--- !u!60 &2141528342213205434
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,21 +178,6 @@ PolygonCollider2D:
       - {x: -0.475, y: -0.73499995}
       - {x: -0.465, y: -0.615}
       - {x: -0.515, y: -0.585}
---- !u!114 &-5875140193906012394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6750868850706131407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2c2fda4f448ad4d9c6fd31cedca261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: apple
-  score: 400
-  isGoldShadow: 0
 --- !u!1 &8404633786106092331
 GameObject:
   m_ObjectHideFlags: 0

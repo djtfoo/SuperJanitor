@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 4124869407604112168}
   - component: {fileID: 7285776514880950658}
   - component: {fileID: 275072406005932761}
-  - component: {fileID: 5699198678619421586}
   - component: {fileID: -8404072871721350561}
+  - component: {fileID: 8187244782925185212}
   m_Layer: 6
   m_Name: test_banana
   m_TagString: Trash
@@ -182,7 +182,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivotAxis: 4
   targetTransform: {fileID: 0}
---- !u!60 &5699198678619421586
+--- !u!114 &-8404072871721350561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837446617159046149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2c2fda4f448ad4d9c6fd31cedca261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: banana
+  score: 200
+  isGoldShadow: 0
+--- !u!60 &8187244782925185212
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,18 +277,3 @@ PolygonCollider2D:
       - {x: -0.77, y: -0.92499995}
       - {x: -0.69, y: -0.91499996}
       - {x: -0.44, y: -0.835}
---- !u!114 &-8404072871721350561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8837446617159046149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2c2fda4f448ad4d9c6fd31cedca261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: banana
-  score: 200
-  isGoldShadow: 0

@@ -93,8 +93,8 @@ GameObject:
   - component: {fileID: 6792308552212967239}
   - component: {fileID: 1491380513427754657}
   - component: {fileID: 4265288766344116261}
-  - component: {fileID: 4516774608511425407}
   - component: {fileID: 1036948328203855758}
+  - component: {fileID: 2987711670365711136}
   m_Layer: 6
   m_Name: test_can
   m_TagString: Trash
@@ -182,7 +182,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pivotAxis: 4
   targetTransform: {fileID: 0}
---- !u!60 &4516774608511425407
+--- !u!114 &1036948328203855758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7906810991588307682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2c2fda4f448ad4d9c6fd31cedca261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: can
+  score: 800
+  isGoldShadow: 0
+--- !u!60 &2987711670365711136
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,18 +256,3 @@ PolygonCollider2D:
       - {x: 0.21, y: -0.79999995}
       - {x: 0.26, y: -0.77}
       - {x: 0.85999995, y: -0.45999998}
---- !u!114 &1036948328203855758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7906810991588307682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a2c2fda4f448ad4d9c6fd31cedca261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: can
-  score: 800
-  isGoldShadow: 0

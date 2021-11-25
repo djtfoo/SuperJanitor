@@ -111,6 +111,6 @@ public class Timer : MonoBehaviour
     public string GetTimeRemainingStr()
     {
         /// TODO: determine format
-        return timeRemaining.ToString("0.00");
+        return ((int)timeRemaining).ToString();
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SuctionRaycast : MonoBehaviour
 {
@@ -10,13 +11,12 @@ public class SuctionRaycast : MonoBehaviour
     private ScoreManager scoreManager;
     [SerializeField]
     private Camera arCamera;
+    [SerializeField]
+    private TextMeshProUGUI debugText;
 
     // normalised position of cursor on screen
     private float cursorX;
     private float cursorY;
-
-    private float screenWidth = 1440;
-    private float screenHeight = 2960;
 
     // Start is called before the first frame update
     void Start()
@@ -34,33 +34,27 @@ public class SuctionRaycast : MonoBehaviour
 
     public void TrySucking()
     {
-        scoreManager.IncrementScore(100);
-
-        // get screen position of cursor
-        //Vector2 screenPosition = arCamera.ViewportToScreenPoint(new Vector2(cursorX, cursorY));
-
-        /*
-        /// TODO: raycast and see hits with trash
-        List<ARRaycastHit> hits = new List<ARRaycastHit>();
-        raycastManager.Raycast(screenPosition, hits, UnityEngine.XR.ARSubsystems.TrackableType.Planes);
-
-        if (hits.Count > 0)
+        Vector2 screenPosition = arCamera.ViewportToScreenPoint(new Vector2(cursorX, cursorY));
+        Ray ray = arCamera.ScreenPointToRay(screenPosition);
+        RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+        if (hit2D.collider != null)
         {
-            /// TODO: remove trash
+            // Display debug text
+            debugText.gameObject.SetActive(true);
+            debugText.text = "RAYCAST!!!!";
 
-            /// TODO: increment score
-            scoreManager.IncrementScore(100);
-        }*/
-
-        Ray ray = arCamera.ScreenPointToRay(new Vector2(cursorX * screenWidth, cursorY * screenHeight));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
-        {
             /// TODO: update trash picked data and increment score
-            gameManager.PickedUpTrash(hit.transform.GetComponent<Trash>());
+            Trash trash = hit2D.transform.GetComponent<Trash>();
+            if (trash != null)
+                gameManager.PickedUpTrash(trash);
 
             /// TODO: remove trash
-            Destroy(hit.transform.gameObject);
+            Destroy(hit2D.transform.gameObject);
+        }
+        else
+        {
+            debugText.gameObject.SetActive(true);
+            debugText.text = "NO RAYCAST :(";
         }
     }
 }

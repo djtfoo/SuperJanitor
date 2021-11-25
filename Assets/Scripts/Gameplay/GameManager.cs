@@ -17,13 +17,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI trashCounterText;
 
+    [SerializeField]
+    private Timer gameTimer;
+
+    ///  TODO: tbh, this shld be in ScoreManager instead
     private int numTrashPicked = 0; // total no. trash picked up
     private Dictionary<string, int> trashQuantity;  // breakdown of quantities for each trash type
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        trashQuantity = new Dictionary<string, int>();
     }
 
     // Update is called once per frame
@@ -39,6 +43,9 @@ public class GameManager : MonoBehaviour
     {
         // Find the floor plane and spawn trash
         enemyManager.SpawnTrash();
+
+        // Start timer
+        gameTimer.StartTimer();
     }
 
     /// <summary>
@@ -46,6 +53,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void PickedUpTrash(Trash trash)
     {
+        // increment game score
+        /// TODO: determine if x2 score (gold shadow) or x1 score
+        scoreManager.IncrementScore(trash.GetScore());
+
         // increment no. trash picked up
         ++numTrashPicked;
         trashCounterText.text = numTrashPicked.ToString();
@@ -55,9 +66,13 @@ public class GameManager : MonoBehaviour
             trashQuantity.Add(trash.GetName(), 0);
         }
         trashQuantity[trash.GetName()] = trashQuantity[trash.GetName()] + 1;
+    }
 
-        // increment game score
-        /// TODO: determine if x2 score (gold shadow) or x1 score
-        scoreManager.IncrementScore(trash.GetScore());
+    public int GetTrashQuantity(string name)
+    {
+        if (!trashQuantity.ContainsKey(name))
+            return 0;
+        else
+            return trashQuantity[name];
     }
 }
