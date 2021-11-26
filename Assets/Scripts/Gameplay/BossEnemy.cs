@@ -17,6 +17,8 @@ public class BossEnemy : MonoBehaviour
     private float trajectoryDuration = 2f;
     [SerializeField]
     private Transform throwStartPosition;
+    [SerializeField]
+    private ParticleSystem particleSystem;
 
     [Header("Walking parameters")]
     [SerializeField]
@@ -115,6 +117,7 @@ public class BossEnemy : MonoBehaviour
         {
             // Enable boss
             gameObject.SetActive(true);
+            particleSystem.Play();
             PlayThrowAnim();
             firstWaveCompleted = true;
         }
@@ -264,6 +267,7 @@ public class BossEnemy : MonoBehaviour
         {
             // Temporarily "despawn" enemy
             gameObject.SetActive(false);
+            particleSystem.Play();
             // Actually start the game only now
             GameManager gameManager = (GameManager)FindObjectOfType(typeof(GameManager));
             gameManager.StartGame();
