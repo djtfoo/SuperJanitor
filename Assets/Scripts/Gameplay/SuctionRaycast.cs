@@ -14,6 +14,12 @@ public class SuctionRaycast : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI debugText;
 
+    [Header("Vacuum Animation")]
+    [SerializeField]
+    private string suckAnimTrigger = "Vacuum";
+    [SerializeField]
+    private Animator animator;
+
     // normalised position of cursor on screen
     private float cursorX = 0.5f;
     private float cursorY = 0.5f;
@@ -21,17 +27,21 @@ public class SuctionRaycast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (animator == null)
+            animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        animator.ResetTrigger(suckAnimTrigger);
     }
 
     public void TrySucking()
     {
+        // Play animation
+        animator.SetTrigger(suckAnimTrigger);
+
         // 2D raycast from center of screen
         Vector2 screenPosition = arCamera.ViewportToScreenPoint(new Vector2(cursorX, cursorY));
         Ray ray = arCamera.ScreenPointToRay(screenPosition);

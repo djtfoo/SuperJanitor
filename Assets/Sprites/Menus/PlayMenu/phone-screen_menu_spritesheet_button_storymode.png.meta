@@ -167,7 +167,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -188,7 +188,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 491
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -209,7 +209,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 982
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -230,7 +230,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1473
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -251,7 +251,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1964
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -272,7 +272,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2455
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -293,7 +293,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2946
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -314,7 +314,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3437
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -335,7 +335,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3928
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -356,7 +356,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4419
-        y: 0
+        y: 658
         width: 491
         height: 658
       alignment: 0
@@ -376,7 +376,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_10
       rect:
         serializedVersion: 2
-        x: 4910
+        x: 0
         y: 0
         width: 491
         height: 658
@@ -397,7 +397,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_11
       rect:
         serializedVersion: 2
-        x: 5401
+        x: 491
         y: 0
         width: 491
         height: 658
@@ -418,7 +418,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_12
       rect:
         serializedVersion: 2
-        x: 5892
+        x: 982
         y: 0
         width: 491
         height: 658
@@ -439,7 +439,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_13
       rect:
         serializedVersion: 2
-        x: 6383
+        x: 1473
         y: 0
         width: 491
         height: 658
@@ -460,7 +460,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_14
       rect:
         serializedVersion: 2
-        x: 6874
+        x: 1964
         y: 0
         width: 491
         height: 658
@@ -481,7 +481,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_15
       rect:
         serializedVersion: 2
-        x: 7365
+        x: 2455
         y: 0
         width: 491
         height: 658
@@ -502,7 +502,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_16
       rect:
         serializedVersion: 2
-        x: 7856
+        x: 2946
         y: 0
         width: 491
         height: 658
@@ -523,7 +523,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_17
       rect:
         serializedVersion: 2
-        x: 8347
+        x: 3437
         y: 0
         width: 491
         height: 658
@@ -544,7 +544,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_18
       rect:
         serializedVersion: 2
-        x: 8838
+        x: 3928
         y: 0
         width: 491
         height: 658
@@ -565,7 +565,7 @@ TextureImporter:
       name: phone-screen_menu_spritesheet_button_storymode_19
       rect:
         serializedVersion: 2
-        x: 9329
+        x: 4419
         y: 0
         width: 491
         height: 658
@@ -585,7 +585,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 1fb58ff03c53c4e49bccc6081e5f1c33
     internalID: 0
     vertices: []
     indices: 
