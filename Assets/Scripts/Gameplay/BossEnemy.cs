@@ -27,14 +27,34 @@ public class BossEnemy : MonoBehaviour
     private int numTrashToPoopPerWalk = 4;
     [SerializeField]
     private Transform poopStartPosition;
+
+    [Header("Other parameters")]
     [SerializeField]
     private int maxHitsAllowed = 3;
+    public int MaxHitsAllowed
+    {
+        get { return maxHitsAllowed; }
+    }
+    [SerializeField]
+    [Tooltip("Y-coordinate for standing sprites' height")]
+    private float standYCoord = 0.357f;
+    [SerializeField]
+    [Tooltip("Y-coordinate for walking sprites' height")]
+    private float walkYCoord = 0.12f;
 
     private bool firstWave = true;
     private bool firstWaveCompleted = false;
+    public bool FirstWaveCompleted
+    {
+        get { return firstWaveCompleted; }
+    }
     private bool vulnerableToHits = false;
 
     private int hitsTaken = 0;
+    public int HitsTaken
+    {
+        get { return hitsTaken; }
+    }
     private float timePeriodPoop = 0f;
 
     // reference to enemy manager
@@ -90,14 +110,15 @@ public class BossEnemy : MonoBehaviour
     /// </summary>
     public void SetVulnerableToHits()
     {
-        // Check if first wave of trash has been picked up yet
+        // after completing first wave, throw trash and set them to be golden
         if (!firstWaveCompleted)
         {
-            // Enable the Boss Enemy
-            firstWaveCompleted = true;
+            // Enable boss
             gameObject.SetActive(true);
+            PlayThrowAnim();
+            firstWaveCompleted = true;
         }
-        
+
         // Set to be vulnerable to hits
         vulnerableToHits = true;
     }
@@ -107,6 +128,10 @@ public class BossEnemy : MonoBehaviour
     /// </summary>
     public void GetHit()
     {
+        // check if enemy is vulnerable
+        if (!vulnerableToHits)
+            return;
+
         // Set to invulnerable
         vulnerableToHits = false;
         // Increase no. hits taken
@@ -127,6 +152,7 @@ public class BossEnemy : MonoBehaviour
     
     /// <summary>
     /// After Hurt animation completes, set waypoint to walk to
+    /// (Called via Animation Event)
     /// </summary>
     public void AfterHurtAnimation()
     {
@@ -142,9 +168,20 @@ public class BossEnemy : MonoBehaviour
 
     private IEnumerator WalkToDestination(Vector3 dest)
     {
+        // set walking height
+        dest.y = walkYCoord;
+        transform.position = new Vector3(transform.position.x, walkYCoord, transform.position.z);
+
         float timer = 0f;
         int numPooped = 0;  // no. trash pooped out so far
         Vector3 startPos = transform.position;
+
+        // Flip walk animation depending on direction
+        float xDir = dest.x - startPos.x;
+        float initialXScale = transform.localScale.x;
+        if (xDir < 0f)
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
         // Walk
         while (timer < walkDuration)   // have not reached destination
         {
@@ -166,9 +203,16 @@ public class BossEnemy : MonoBehaviour
             yield return null;
         }
 
+        // set standing height
+        dest.y = standYCoord;
+        // reset scale
+        transform.localScale = new Vector3(initialXScale, transform.localScale.y, transform.localScale.z);
         // Finish walking
         transform.position = dest;
         animationController.SetTrigger("WalkComplete"); // return to idle animation
+
+        // reset trigger after awhile
+        yield return new WaitForSeconds(0.1f);
         animationController.ResetTrigger("WalkComplete");
     }
 
@@ -179,6 +223,11 @@ public class BossEnemy : MonoBehaviour
     {
         // spawn initial wave of trash
         List<Transform> trashList = enemyManager.SpawnTrashWave();
+        // set trash to be bonus (golden shadow)
+        foreach (Transform trash in trashList)
+        {
+            trash.GetComponent<Trash>().EnableBonusScore();
+        }
 
         // throw trash to its landing positions
         StartCoroutine(TrashTrajectory(trashList));

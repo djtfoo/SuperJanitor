@@ -1,0 +1,576 @@
+fileFormatVersion: 2
+guid: 20bf211c5afe8b54facd1f76e5c20cb0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5443234548082791059
+    second: phone-screen_menu_spritesheet_button_play_0
+  - first:
+      213: -839943635220747412
+    second: phone-screen_menu_spritesheet_button_play_1
+  - first:
+      213: -5160358876108842742
+    second: phone-screen_menu_spritesheet_button_play_2
+  - first:
+      213: -187871923699081840
+    second: phone-screen_menu_spritesheet_button_play_3
+  - first:
+      213: -7843920111632298255
+    second: phone-screen_menu_spritesheet_button_play_4
+  - first:
+      213: -6678894961433084742
+    second: phone-screen_menu_spritesheet_button_play_5
+  - first:
+      213: 678415252669996719
+    second: phone-screen_menu_spritesheet_button_play_6
+  - first:
+      213: -1418932077872776889
+    second: phone-screen_menu_spritesheet_button_play_7
+  - first:
+      213: 4391148586169325957
+    second: phone-screen_menu_spritesheet_button_play_8
+  - first:
+      213: -6888424358935040089
+    second: phone-screen_menu_spritesheet_button_play_9
+  - first:
+      213: -2350690062245180924
+    second: phone-screen_menu_spritesheet_button_play_10
+  - first:
+      213: 2726374671644341788
+    second: phone-screen_menu_spritesheet_button_play_11
+  - first:
+      213: 7222266369632352262
+    second: phone-screen_menu_spritesheet_button_play_12
+  - first:
+      213: -5638959609124186629
+    second: phone-screen_menu_spritesheet_button_play_13
+  - first:
+      213: -337204010233993149
+    second: phone-screen_menu_spritesheet_button_play_14
+  - first:
+      213: -368257561255739883
+    second: phone-screen_menu_spritesheet_button_play_15
+  - first:
+      213: -2694962698786091668
+    second: phone-screen_menu_spritesheet_button_play_16
+  - first:
+      213: -7579665321546386707
+    second: phone-screen_menu_spritesheet_button_play_17
+  - first:
+      213: -5834266321088394970
+    second: phone-screen_menu_spritesheet_button_play_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392db936bf04a8b40800000000000000
+      internalID: 5443234548082791059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_1
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b2157c6bbe754f0800000000000000
+      internalID: -839943635220747412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_2
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a099ff361f8b268b0800000000000000
+      internalID: -5160358876108842742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_3
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d95a41b7b846df0800000000000000
+      internalID: -187871923699081840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_4
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe4d93a73cc42390800000000000000
+      internalID: -7843920111632298255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_5
+      rect:
+        serializedVersion: 2
+        x: 3515
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc72ab3b6ccf43a0800000000000000
+      internalID: -6678894961433084742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_6
+      rect:
+        serializedVersion: 2
+        x: 4218
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae1a91f3173a6900800000000000000
+      internalID: 678415252669996719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_7
+      rect:
+        serializedVersion: 2
+        x: 4921
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7497cf10bc0fe4ce0800000000000000
+      internalID: -1418932077872776889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_8
+      rect:
+        serializedVersion: 2
+        x: 5624
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589d492bf5e70fc30800000000000000
+      internalID: 4391148586169325957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_9
+      rect:
+        serializedVersion: 2
+        x: 6327
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af678fba866760a0800000000000000
+      internalID: -6888424358935040089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_10
+      rect:
+        serializedVersion: 2
+        x: 7030
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ac5d6c7dba06fd0800000000000000
+      internalID: -2350690062245180924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_11
+      rect:
+        serializedVersion: 2
+        x: 7733
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16bbf3a15706d520800000000000000
+      internalID: 2726374671644341788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_12
+      rect:
+        serializedVersion: 2
+        x: 8436
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 608bf2b7ff4aa3460800000000000000
+      internalID: 7222266369632352262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_13
+      rect:
+        serializedVersion: 2
+        x: 9139
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5906bac146eb1b0800000000000000
+      internalID: -5638959609124186629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_14
+      rect:
+        serializedVersion: 2
+        x: 9842
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3486a214db2025bf0800000000000000
+      internalID: -337204010233993149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_15
+      rect:
+        serializedVersion: 2
+        x: 10545
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51eff7bf2bfa3eaf0800000000000000
+      internalID: -368257561255739883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_16
+      rect:
+        serializedVersion: 2
+        x: 11248
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d4de734b1999ad0800000000000000
+      internalID: -2694962698786091668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_17
+      rect:
+        serializedVersion: 2
+        x: 11951
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de271e08c8e9fc690800000000000000
+      internalID: -7579665321546386707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: phone-screen_menu_spritesheet_button_play_18
+      rect:
+        serializedVersion: 2
+        x: 12654
+        y: 0
+        width: 703
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629408631b5880fa0800000000000000
+      internalID: -5834266321088394970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

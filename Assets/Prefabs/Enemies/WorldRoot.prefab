@@ -168,11 +168,13 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7525590589069187889}
   trajectoryDuration: 1
   throwStartPosition: {fileID: 7865299260566109577}
-  gameWorld: {fileID: 0}
+  gameWorld: {fileID: 4021224770640334420}
   walkDuration: 2
-  numTrashToPoopPerWalk: 4
+  numTrashToPoopPerWalk: 5
   poopStartPosition: {fileID: 7006959494906225146}
   maxHitsAllowed: 3
+  standYCoord: 0.357
+  walkYCoord: 0.12
 --- !u!60 &5432412042003641484
 PolygonCollider2D:
   m_ObjectHideFlags: 0

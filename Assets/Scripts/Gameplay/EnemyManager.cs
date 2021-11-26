@@ -35,7 +35,7 @@ public class EnemyManager : MonoBehaviour
 
     void Awake()
     {
-        List<Transform> trashList = new List<Transform>();
+        trashList = new List<Transform>();
     }
 
     // Start is called before the first frame update
@@ -105,6 +105,9 @@ public class EnemyManager : MonoBehaviour
 
         // spawn the gameplay area
         sessionOrigin.MakeContentAppearAt(worldRootTransform, plane.center);
+
+        // spawn initial trash wave
+        SpawnTrashWave();
     }
 
     /// <summary>
@@ -117,8 +120,7 @@ public class EnemyManager : MonoBehaviour
         // spawn some trash
         for (int i = 0; i < numSpawnsPerWave; ++i)
         {
-            // add to trash list
-            trashList.Add(SpawnTrash());
+            SpawnTrash();
         }
 
         // return trash list to be worked on
@@ -134,6 +136,9 @@ public class EnemyManager : MonoBehaviour
         newTrash.transform.SetParent(worldRootTransform);
         // randomly set relative position of trash object
         newTrash.transform.localPosition = GetRandomLocalPosition();
+
+        // add to trash list
+        trashList.Add(newTrash.transform);
 
         return newTrash.transform;
     }

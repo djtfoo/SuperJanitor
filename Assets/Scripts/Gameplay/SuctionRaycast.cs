@@ -51,6 +51,14 @@ public class SuctionRaycast : MonoBehaviour
                 // update trash picked data and increment score
                 gameManager.PickedUpTrash(trash);
             }
+            else  // might be cockroach
+            {
+                BossEnemy enemy = hit2D.transform.GetComponent<BossEnemy>();
+                if (enemy != null)
+                {
+                    enemy.GetHit();
+                }
+            }
         }
         else
         {
