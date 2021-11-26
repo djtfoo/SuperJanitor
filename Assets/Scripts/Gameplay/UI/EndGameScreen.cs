@@ -26,6 +26,10 @@ public class EndGameScreen : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI totalScoreText;
     [SerializeField]
+    private TextMeshProUGUI timeTakenText;
+    [SerializeField]
+    private TextMeshProUGUI highestComboText;
+    [SerializeField]
     private GameObject[] starsEarned;
 
     [Header("Score display for boss kill")]
@@ -60,8 +64,8 @@ public class EndGameScreen : MonoBehaviour
     private void UpdateEndgameScreen()
     {
         // TEMP: indicate win or lost
-        winText.SetActive(gameManager.IsBossDefeated);
-        loseText.SetActive(!gameManager.IsBossDefeated);
+        //winText.SetActive(gameManager.IsBossDefeated);
+        //loseText.SetActive(!gameManager.IsBossDefeated);
 
         // Update game stats breakdown for trash items picked up
         for (int i = 0; i < scoreItems.Length; ++i)
@@ -74,6 +78,11 @@ public class EndGameScreen : MonoBehaviour
             bossQuantityText.text = "1";
         else
             bossQuantityText.text = "0";
+
+        // Update highest combo count
+        highestComboText.text = scoreManager.GetHighestCombo().ToString();
+        // Update time taken
+        timeTakenText.text = gameManager.GetTimeTaken().ToString();
 
         // Update total score
         totalScoreText.text = scoreManager.GetScore().ToString();

@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Timer gameTimer;
 
+    private int gameTimeTakenSecs = 0;
+
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -128,6 +130,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void EndGame()
     {
+        // Get time taken for the game
+        float timeTaken = gameTimer.GetTimerDuration() - gameTimer.GetTimeRemaining();
+        gameTimeTakenSecs = (int)timeTaken;
+        // Stop timer
+        gameTimer.StopTimer();
         // Enable endgame screen
         endGameScreen.DisplayEndgameScreen();
     }
@@ -140,5 +147,10 @@ public class GameManager : MonoBehaviour
         scoreManager.IncrementScore(bossDefeatedPoints);
         // end the game
         EndGame();
+    }
+
+    public int GetTimeTaken()
+    {
+        return gameTimeTakenSecs;
     }
 }

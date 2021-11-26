@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyLivesDisplay : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("First array element should be the rightmost")]
+    [Tooltip("First array element should be the leftmost")]
     private GameObject[] enemyLivesDisplay;
 
     private BossEnemy bossEnemy = null;
@@ -32,7 +32,7 @@ public class EnemyLivesDisplay : MonoBehaviour
             int livesRemaining = bossEnemy.MaxHitsAllowed - bossEnemy.HitsTaken;
             for (int i = 0; i < bossEnemy.MaxHitsAllowed; ++i)
             {
-                if (bossEnemy.FirstWaveCompleted)
+                if (!bossEnemy.FirstWaveCompleted)
                     enemyLivesDisplay[i].SetActive(false);
                 else
                     enemyLivesDisplay[i].SetActive(i < livesRemaining);

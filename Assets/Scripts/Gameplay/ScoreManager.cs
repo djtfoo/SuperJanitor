@@ -24,6 +24,8 @@ public class ScoreManager : MonoBehaviour
     public event Action<ScoreChangedEventArgs> scoreChanged;
     public event Action<int> killStreakChanged;
 
+    private int highestCombo = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,10 +57,23 @@ public class ScoreManager : MonoBehaviour
         scoreChanged.Invoke(args);
     }
 
+    /// <summary>
+    /// To be called only if incrementing the kill streak (combo) without wanting to update the score.
+    /// </summary>
+    /// <param name="increment"></param>
+    public void IncrementKillStreak(int increment)
+    {
+        SetKillStreak(killStreak + increment);
+    }
+
     private void SetKillStreak(int newStreak)
     {
         // Set multiplier amount
         killStreak = newStreak;
+        // Update highest combo
+        if (newStreak > highestCombo)
+            highestCombo = newStreak;
+
         // Set timer
         if (newStreak == 0) // combo is reset
             // Disable timer
@@ -76,5 +91,10 @@ public class ScoreManager : MonoBehaviour
     public void ResetKillStreak()
     {
         SetKillStreak(0);
+    }
+
+    public int GetHighestCombo()
+    {
+        return highestCombo;
     }
 }

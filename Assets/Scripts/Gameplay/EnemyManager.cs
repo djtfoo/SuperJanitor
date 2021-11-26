@@ -107,7 +107,7 @@ public class EnemyManager : MonoBehaviour
         sessionOrigin.MakeContentAppearAt(worldRootTransform, plane.center);
 
         // spawn initial trash wave
-        SpawnTrashWave();
+        //SpawnTrashWave();
     }
 
     /// <summary>

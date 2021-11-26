@@ -41,8 +41,8 @@ public class SuctionRaycast : MonoBehaviour
         if (hit2D.collider != null)
         {
             // TEMP: Display debug text
-            debugText.gameObject.SetActive(true);
-            debugText.text = "RAYCAST!!!!";
+            //debugText.gameObject.SetActive(true);
+            //debugText.text = "RAYCAST!!!!";
 
             // Get the Trash item hit by the raycast
             Trash trash = hit2D.transform.GetComponent<Trash>();
@@ -57,14 +57,15 @@ public class SuctionRaycast : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.GetHit();
+                    scoreManager.IncrementKillStreak(1);
                 }
             }
         }
         else
         {
             // TEMP: Display debug text
-            debugText.gameObject.SetActive(true);
-            debugText.text = "NO RAYCAST :(";
+            //debugText.gameObject.SetActive(true);
+            //debugText.text = "NO RAYCAST :(";
         }
     }
 }

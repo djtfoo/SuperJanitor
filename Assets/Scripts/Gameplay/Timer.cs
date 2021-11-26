@@ -113,4 +113,9 @@ public class Timer : MonoBehaviour
         /// TODO: determine format
         return ((int)timeRemaining).ToString();
     }
+
+    public float GetTimerDuration()
+    {
+        return timerDuration;
+    }
 }

@@ -168,6 +168,8 @@ public class BossEnemy : MonoBehaviour
 
     private IEnumerator WalkToDestination(Vector3 dest)
     {
+        animationController.ResetTrigger("WalkComplete");
+
         // set walking height
         dest.y = walkYCoord;
         transform.position = new Vector3(transform.position.x, walkYCoord, transform.position.z);
@@ -205,15 +207,16 @@ public class BossEnemy : MonoBehaviour
 
         // set standing height
         dest.y = standYCoord;
-        // reset scale
-        transform.localScale = new Vector3(initialXScale, transform.localScale.y, transform.localScale.z);
         // Finish walking
         transform.position = dest;
         animationController.SetTrigger("WalkComplete"); // return to idle animation
+        // reset scale
+        transform.localScale = new Vector3(initialXScale, transform.localScale.y, transform.localScale.z);
 
         // reset trigger after awhile
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         animationController.ResetTrigger("WalkComplete");
+        yield return null;
     }
 
     /// <summary>
@@ -223,10 +226,15 @@ public class BossEnemy : MonoBehaviour
     {
         // spawn initial wave of trash
         List<Transform> trashList = enemyManager.SpawnTrashWave();
-        // set trash to be bonus (golden shadow)
-        foreach (Transform trash in trashList)
+
+        // for first wave, it is NOT bonus
+        if (!firstWave)
         {
-            trash.GetComponent<Trash>().EnableBonusScore();
+            // set trash to be bonus (golden shadow)
+            foreach (Transform trash in trashList)
+            {
+                trash.GetComponent<Trash>().EnableBonusScore();
+            }
         }
 
         // throw trash to its landing positions
@@ -249,13 +257,13 @@ public class BossEnemy : MonoBehaviour
             yield return null;
         }
 
-        // Temporarily "despawn" enemy
-        gameObject.SetActive(false);
         animationController.ResetTrigger("Throw");
 
         // If this is the first wave, game has not started
         if (firstWave)
         {
+            // Temporarily "despawn" enemy
+            gameObject.SetActive(false);
             // Actually start the game only now
             GameManager gameManager = (GameManager)FindObjectOfType(typeof(GameManager));
             gameManager.StartGame();
